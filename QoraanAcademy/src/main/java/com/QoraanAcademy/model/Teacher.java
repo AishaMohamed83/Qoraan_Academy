@@ -5,16 +5,24 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "teacher")
 public class Teacher extends Person{
-	@Id
+
 	private String id;
 	private int availableTimeFoSession;
 	private int maximumNumberOfStudents;
 	
-	public Teacher(String firstName, String lasttName, int age, String email, String gander, int availableTimeFoSession,
+	public Teacher(String firstName, String lastName, int age, String email, String gander, int availableTimeFoSession,
 			int maximumNumberOfStudents) {
-		super(firstName, lasttName, age, email, gander);
+		super(firstName, lastName, age, email, gander);
 		this.availableTimeFoSession = availableTimeFoSession;
 		this.maximumNumberOfStudents = maximumNumberOfStudents;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getId() {
+		return id;
 	}
 
 	public int getAvailableTimeFoSession() {
